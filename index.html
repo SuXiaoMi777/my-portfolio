@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>個人網站</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;700&family=Outfit:wght@400;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="site-header">
+    <a href="#" class="logo" data-nav="home">Home</a>
+    <nav class="main-nav" aria-label="主要導覽">
+      <a href="#about" class="nav-link" data-nav="about">About Me</a>
+      <a href="#skills" class="nav-link" data-nav="skills">Skills</a>
+      <a href="#work" class="nav-link" data-nav="work">My work</a>
+      <a href="#contact" class="nav-link" data-nav="contact">Contact</a>
+    </nav>
+    <button type="button" class="menu-toggle" aria-label="開啟選單" aria-expanded="false">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+  </header>
+
+  <main id="app">
+    <!-- 首頁 -->
+    <section class="view view--active" id="view-home" data-view="home">
+      <div class="hero">
+        <p class="hero-label">Welcome to</p>
+        <h1 class="hero-title">Andy's Portfolio</h1>
+        <p class="hero-desc">STUDENT <br>喜歡挑戰新的事物並從中學習、探索自己。</p>
+        <div class="hero-actions">
+          <button type="button" class="btn btn--primary" data-nav="about">認識我</button>
+          <button type="button" class="btn btn--ghost" data-nav="work">查看作品</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- About Me -->
+    <section class="view" id="view-about" data-view="about" hidden>
+      <div class="page-inner page-inner--wide">
+        <h2 class="page-title">About Me</h2>
+        <!-- <p class="page-lead">認識我：小自介、學歷與興趣。</p> -->
+        <div class="about-cards">
+          <article class="about-card">
+            <figure class="about-card__media">
+              <img src="images/about/intro.jpg" alt="小自介照片" width="400" height="300" loading="lazy" onerror="this.onerror=null;this.src='images/about/intro.svg';" />
+            </figure>
+            <div class="about-card__body">
+              <h3 class="about-card__title">小自介  Introduction</h3>
+              <p>你好，我是 <strong>蘇柏安 aka Andy</strong>。目前以學生身份持續進化，喜歡挑戰新的事物並從中探索、學習</p>
+            </div>
+          </article>
+          <article class="about-card">
+            <figure class="about-card__media">
+              <img src="images/about/education.png" alt="學歷照片" width="400" height="300" loading="lazy" onerror="this.onerror=null;this.src='images/about/education.svg';" />
+            </figure>
+            <div class="about-card__body">
+              <h3 class="about-card__title">學歷 Education</h3>
+              <ul class="about-card__list">
+                <li><strong>暨南大學資訊管理學系</strong></li>
+                <p>好山好水好無聊(沒有辣~埔里是個好地方)</p>
+                <li><strong>中山大學資訊管理研究所</strong></li>
+                <p>跟猴哥打架去啦(好熱好熱好熱)</p>
+              </ul>
+            </div>
+          </article>
+          <article class="about-card">
+            <figure class="about-card__media">
+              <img src="images/about/hobby.jpg" alt="興趣照片" width="400" height="300" loading="lazy" onerror="this.onerror=null;this.src='images/about/hobby.svg';" />
+            </figure>
+            <div class="about-card__body">
+              <h3 class="about-card__title">興趣 Hobby</h3>
+              <p>最喜歡打羽毛球</p>
+              <ul class="about-card__list">
+                <li>系隊教學</li>
+                <li>快樂打球</li>
+              </ul>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Skills -->
+    <section class="view" id="view-skills" data-view="skills" hidden>
+      <div class="page-inner">
+        <h2 class="page-title">Skills</h2>
+        <p class="page-lead">我擅長的工具與技術</p>
+        <ul class="skills-grid">
+          <li class="skill-card">
+            <h3>網頁 Web</h3>
+            <p>HTML、CSS、JavaScript、React</p>
+          </li>
+          <li class="skill-card">
+            <h3>程式 Program</h3>
+            <p>Python、Java、C/C#</p>
+          </li>
+          <li class="skill-card">
+            <h3>後端 Server</h3>
+            <p>Flask、Node.js、API、MySQL、PostgreSQL</p>
+          </li>
+          <li class="skill-card">
+            <h3>開發 Development</h3>
+            <p>Git、CI/CD、協作</p>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- My work -->
+    <section class="view" id="view-work" data-view="work" hidden>
+      <div class="page-inner page-inner--wide">
+        <h2 class="page-title">My work</h2>
+        <p class="page-lead">專案、工作經歷與其他活動</p>
+
+        <section class="work-block" aria-labelledby="work-projects-heading">
+          <h3 class="work-block__title" id="work-projects-heading">專案</h3>
+          <div class="work-grid">
+            <article class="work-card">
+              <div class="work-thumb">#FULL-STACK<br> #DOCKER <br>#SANDBOX</div>
+              <h4>C 語言線上 AI 互動學習平台</h4>
+              <p>整合 GCC 編譯器與 WebSocket 虛擬終端，結合動態記憶體視覺化追蹤與 AI 邏輯除錯輔助的學習系統。</p>
+              <a href="#project/c-lang-ai" class="work-link" data-project="c-lang-ai">查看詳情 →</a>
+            </article>
+            <article class="work-card">
+              <div class="work-thumb">#SIC <br>#TWO-PASS <br>#Python</div>
+              <h4>基於 Python 的簡單組譯器</h4>
+              <p>以 Python 實作 Two-Pass SIC 組譯機制，支援符號表建構、多種定址模式及嚴謹的多重錯誤累積回報。</p>
+              <a href="#project/assembler" class="work-link" data-project="assembler">查看詳情 →</a>
+            </article>
+            <article class="work-card">
+              <div class="work-thumb">#LINE BOT <br>#RAG <br>#HEALTH CARE</div>
+              <h4>好好食反 您的個人飲食小幫手</h4>
+              <p>串接 GPT-4o-mini 多模態視覺與 Cookpad RAG 檢索，具備生熟食狀態機分流與 LIFF 營養數據儀表板。</p>
+              <a href="#project/project-3" class="work-link" data-project="foodcleaner">查看詳情 →</a>
+            </article>
+          </div>
+        </section>
+
+        <section class="work-block" aria-labelledby="work-experience-heading">
+          <h3 class="work-block__title" id="work-experience-heading">工作經歷</h3>
+          <ol class="experience-list">
+            <li class="experience-item">
+              <time class="experience-item__date" datetime="2024-06">2026.06 — 2026.09</time>
+              <div class="experience-item__body">
+                <h4>撿出貨作業人員</h4>
+                <p class="experience-item__org">PChome 網路家庭</p>
+                <p>#物流 #IoT #貨運</p>
+              </div>
+            </li>
+            <li class="experience-item">
+              <time class="experience-item__date" datetime="2024-06">2026.02 — 2026.06</time>
+              <div class="experience-item__body">
+                <h4>進階程式設計 - 教學助理</h4>
+                <p class="experience-item__org">暨南大學資訊管理學系</p>
+                <p>#Java 概念 #物件導向 #作業輔導</p>
+              </div>
+            </li>
+            <li class="experience-item">
+              <time class="experience-item__date" datetime="2024-06">2025.09 — 2026.01</time>
+              <div class="experience-item__body">
+                <h4>程式設計 - 教學助理</h4>
+                <p class="experience-item__org">暨南大學資訊管理學系</p>
+                <p>#C 語言概念 #結構化程式 #作業輔導</p>
+              </div>
+            </li>
+            <li class="experience-item">
+              <time class="experience-item__date" datetime="2023-01">2025.09 — 2026.01</time>
+              <div class="experience-item__body">
+                <h4>資料庫管理系統 - 教學助理</h4>
+                <p class="experience-item__org">暨南大學資訊管理學系</p>
+                <p>#MySQL #XAMPP #PostgreSQL #DBeaver #DML #作業輔導</p>
+              </div>
+            </li>
+            <li class="experience-item">
+              <time class="experience-item__date" datetime="2023-01">2024.12 — 2024.02</time>
+              <div class="experience-item__body">
+                <h4>外場服務生</h4>
+                <p class="experience-item__org">東京牛角股份有限公司</p>
+                <p>#燒肉 #桌邊服務 #人際互動</p>
+              </div>
+            </li>
+            <li class="experience-item">
+              <time class="experience-item__date" datetime="2023-01">2022.06 — 2022.09</time>
+              <div class="experience-item__body">
+                <h4>外場服務生</h4>
+                <p class="experience-item__org">耕讀園書香茶坊</p>
+                <p>#簡餐 #桌邊服務 #人際互動</p>
+              </div>
+            </li>
+            
+          </ol>
+        </section>
+
+        <section class="work-block" aria-labelledby="work-activities-heading">
+          <h3 class="work-block__title" id="work-activities-heading">其他活動</h3>
+          <div class="activity-grid">
+            <article class="activity-card">
+              <figure class="activity-card__media">
+                <img src="images/activities/angel.png" alt="程式設計小天使" loading="lazy" onerror="this.onerror=null;this.src='images/activities/angel.svg';" />
+              </figure>
+              <div class="activity-card__content">
+                <span class="activity-card__tag">志工</span>
+                <h4>程式設計小天使</h4>
+                <p class="activity-card__meta">111 校內</p>
+                <p>每週的課餘時間幫助寫程式遇到困難的同學</p>
+              </div>
+            </article>
+
+            <article class="activity-card">
+              <figure class="activity-card__media">
+                <img src="images/activities/spil.png" alt="矽品精密工業企業參訪" loading="lazy" onerror="this.onerror=null;this.src='images/activities/silicon.svg';" />
+              </figure>
+              <div class="activity-card__content">
+                <span class="activity-card__tag">參訪</span>
+                <h4>矽品精密工業企業參訪</h4>
+                <p class="activity-card__meta">113 校外</p>
+                <p>提前瞭解產業界真正在做的東西</p>
+              </div>
+            </article>
+
+            <article class="activity-card">
+              <figure class="activity-card__media">
+                <img src="images/activities/AI領獎.jfif" alt="南投縣政府 AI 創意研習營" loading="lazy" onerror="this.onerror=null;this.src='images/activities/ai-camp.svg';" />
+              </figure>
+              <div class="activity-card__content">
+                <span class="activity-card__tag">研習</span>
+                <h4>南投縣政府 AI 創意研習營</h4>
+                <p class="activity-card__meta">114 校外</p>
+                <p>AI 數位作品實作(佳作)</p>
+              </div>
+            </article>
+          </div>
+        </section>
+      </div>
+    </section>
+
+    <!-- 專案公版詳情頁 -->
+    <section class="view" id="view-project" data-view="project" hidden>
+      <div class="page-inner page-inner--wide">
+        <button type="button" class="btn btn--ghost project-back" data-nav="work">← 返回 My work</button>
+        <h1 class="project-detail__title" id="project-title"></h1>
+        <figure class="project-detail__media">
+          <img id="project-image" src="" alt="" width="960" height="540" loading="lazy" />
+        </figure>
+        <div class="project-detail__intro" id="project-intro"></div>
+      </div>
+    </section>
+
+    <!-- Contact -->
+    <section class="view" id="view-contact" data-view="contact" hidden>
+      <div class="page-inner page-inner--narrow">
+        <h2 class="page-title">Contact Me</h2>
+        <p class="page-lead">快來聯絡我!!</p>
+        <ul class="contact-list">
+          <li>
+            <span class="contact-label">Email</span>
+            <a href="mailto:andy1050118@gmail.com">andy1050118@gmail.com</a>
+          </li>
+          <li>
+            <span class="contact-label">GitHub</span>
+            <a href="https://github.com/SuXiaoMi777/SuXiaoMi777" target="_blank" rel="noopener noreferrer">SuXiaoMi777</a>
+          </li>
+          <li>
+            <span class="contact-label">LinkedIn</span>
+            <a href="https://www.linkedin.com/in/po-an-su-1a1209346/" target="_blank" rel="noopener noreferrer">Po An Su</a>
+          </li>
+        </ul>
+        
+      </div>
+    </section>
+  </main>
+
+  <script src="projects.js"></script>
+  <script src="main.js"></script>
+</body>
+</html>
+
+<script type="module" src="/src/main.ts"></script>
